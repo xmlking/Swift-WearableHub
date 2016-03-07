@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  WearableHub
-//
-//  Created by Sumanth Chinthagunta on 3/6/16.
-//  Copyright © 2016 Sumanth Chinthagunta. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
