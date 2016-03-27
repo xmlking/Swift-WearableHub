@@ -8,17 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		5732D74B91F45FE20AF06EC0 /* Pods_WearableHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B151300840809669AC61BC2 /* Pods_WearableHub.framework */; };
+		7D1A16DA1C92460900430E9B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1A16D91C92460900430E9B /* MapKit.framework */; };
 		7D2743A31C8D052B00B53C85 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2743A21C8D052B00B53C85 /* HealthKit.framework */; };
 		7D2743A91C8D1E8500B53C85 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2743A71C8D1E8500B53C85 /* MapViewController.swift */; };
 		7D2743AA1C8D1E8500B53C85 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2743A81C8D1E8500B53C85 /* PhotoViewController.swift */; };
 		7D2743AC1C8D1FEC00B53C85 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2743AB1C8D1FEC00B53C85 /* MenuController.swift */; };
+		7D82BA5D1CA655E300720988 /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D82BA5C1CA655E300720988 /* MicrosoftBandKit_iOS.framework */; };
+		7D88E5EC1CA65A6E00BA3CD4 /* WearableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9C9961C8D007000D0D1B0 /* WearableViewController.swift */; };
+		7D88E5F31CA6630300BA3CD4 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88E5F21CA6630300BA3CD4 /* CoreBluetooth.framework */; };
+		7DA5359B1CA7B2CE000628F9 /* Peripherals in Resources */ = {isa = PBXBuildFile; fileRef = 7DA5359A1CA7B2CE000628F9 /* Peripherals */; };
+		7DA535A41CA7B6C2000628F9 /* RxMicrosoftBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA535A31CA7B6C2000628F9 /* RxMicrosoftBand.swift */; };
+		7DA535A71CA7B6E8000628F9 /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA535A61CA7B6E8000628F9 /* CloudSync.swift */; };
+		7DA535AF1CA7BA05000628F9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7DA535AE1CA7BA05000628F9 /* Settings.bundle */; };
 		7DB9C9951C8D007000D0D1B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9C9941C8D007000D0D1B0 /* AppDelegate.swift */; };
-		7DB9C9971C8D007000D0D1B0 /* WearableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9C9961C8D007000D0D1B0 /* WearableViewController.swift */; };
 		7DB9C99A1C8D007000D0D1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB9C9981C8D007000D0D1B0 /* Main.storyboard */; };
 		7DB9C99C1C8D007000D0D1B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DB9C99B1C8D007000D0D1B0 /* Assets.xcassets */; };
 		7DB9C99F1C8D007000D0D1B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB9C99D1C8D007000D0D1B0 /* LaunchScreen.storyboard */; };
 		7DB9C9AA1C8D007000D0D1B0 /* WearableHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9C9A91C8D007000D0D1B0 /* WearableHubTests.swift */; };
 		7DB9C9B51C8D007000D0D1B0 /* WearableHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9C9B41C8D007000D0D1B0 /* WearableHubUITests.swift */; };
+		7DBA1EF51CA83990006A6606 /* Peripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA1EF41CA83990006A6606 /* Peripheral.swift */; };
+		7DBA1EF71CA8484C006A6606 /* AbstractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA1EF61CA8484C006A6606 /* AbstractModel.swift */; };
+		7DBA1EF91CA86DFA006A6606 /* WearableOriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA1EF81CA86DFA006A6606 /* WearableOriViewController.swift */; };
+		7DC498C21CA7A40D00AE73DC /* Connections in Resources */ = {isa = PBXBuildFile; fileRef = 7DC498C11CA7A40D00AE73DC /* Connections */; };
 		A263DFC385C0E3A287124B99 /* Pods_WearableHubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9923902941E710A057D829BA /* Pods_WearableHubTests.framework */; };
 		DF900B377D31A7F8A7D06AA7 /* Pods_WearableHubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B357CB513CFBCE5C94980B3F /* Pods_WearableHubUITests.framework */; };
 /* End PBXBuildFile section */
@@ -43,11 +54,19 @@
 /* Begin PBXFileReference section */
 		234E870B4C6E3650A525D473 /* Pods-WearableHubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WearableHubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WearableHubUITests/Pods-WearableHubUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4B151300840809669AC61BC2 /* Pods_WearableHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WearableHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D1A16D91C92460900430E9B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7D2743A21C8D052B00B53C85 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		7D2743A41C8D052B00B53C85 /* WearableHub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WearableHub.entitlements; sourceTree = "<group>"; };
 		7D2743A71C8D1E8500B53C85 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7D2743A81C8D1E8500B53C85 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		7D2743AB1C8D1FEC00B53C85 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		7D82BA5C1CA655E300720988 /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
+		7D88E5EF1CA6610100BA3CD4 /* WearableHub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WearableHub-Bridging-Header.h"; sourceTree = "<group>"; };
+		7D88E5F21CA6630300BA3CD4 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		7DA5359A1CA7B2CE000628F9 /* Peripherals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Peripherals; path = /Developer/Work/apple/WearableHub/WearableHub/Peripherals; sourceTree = "<absolute>"; };
+		7DA535A31CA7B6C2000628F9 /* RxMicrosoftBand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMicrosoftBand.swift; sourceTree = "<group>"; };
+		7DA535A61CA7B6E8000628F9 /* CloudSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudSync.swift; sourceTree = "<group>"; };
+		7DA535AE1CA7BA05000628F9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7DB9C9911C8D007000D0D1B0 /* WearableHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WearableHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB9C9941C8D007000D0D1B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DB9C9961C8D007000D0D1B0 /* WearableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WearableViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +80,10 @@
 		7DB9C9B01C8D007000D0D1B0 /* WearableHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WearableHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB9C9B41C8D007000D0D1B0 /* WearableHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WearableHubUITests.swift; sourceTree = "<group>"; };
 		7DB9C9B61C8D007000D0D1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DBA1EF41CA83990006A6606 /* Peripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Peripheral.swift; sourceTree = "<group>"; };
+		7DBA1EF61CA8484C006A6606 /* AbstractModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractModel.swift; sourceTree = "<group>"; };
+		7DBA1EF81CA86DFA006A6606 /* WearableOriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WearableOriViewController.swift; sourceTree = "<group>"; };
+		7DC498C11CA7A40D00AE73DC /* Connections */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Connections; path = /Developer/Work/apple/WearableHub/WearableHub/Connections; sourceTree = "<absolute>"; };
 		8CDCEFF7ADC1EA33D90890E5 /* Pods-WearableHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WearableHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WearableHub/Pods-WearableHub.debug.xcconfig"; sourceTree = "<group>"; };
 		9923902941E710A057D829BA /* Pods_WearableHubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WearableHubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E001FF88B75A80DB0F9C16F /* Pods-WearableHubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WearableHubUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WearableHubUITests/Pods-WearableHubUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +98,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D88E5F31CA6630300BA3CD4 /* CoreBluetooth.framework in Frameworks */,
+				7D82BA5D1CA655E300720988 /* MicrosoftBandKit_iOS.framework in Frameworks */,
 				7D2743A31C8D052B00B53C85 /* HealthKit.framework in Frameworks */,
+				7D1A16DA1C92460900430E9B /* MapKit.framework in Frameworks */,
 				5732D74B91F45FE20AF06EC0 /* Pods_WearableHub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,12 +128,41 @@
 		006403A671B6D46AEFA34E4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D88E5F21CA6630300BA3CD4 /* CoreBluetooth.framework */,
+				7D82BA5C1CA655E300720988 /* MicrosoftBandKit_iOS.framework */,
+				7D1A16D91C92460900430E9B /* MapKit.framework */,
 				7D2743A21C8D052B00B53C85 /* HealthKit.framework */,
 				4B151300840809669AC61BC2 /* Pods_WearableHub.framework */,
 				9923902941E710A057D829BA /* Pods_WearableHubTests.framework */,
 				B357CB513CFBCE5C94980B3F /* Pods_WearableHubUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DA535A21CA7B6C2000628F9 /* Peripherals */ = {
+			isa = PBXGroup;
+			children = (
+				7DA535A31CA7B6C2000628F9 /* RxMicrosoftBand.swift */,
+				7DBA1EF41CA83990006A6606 /* Peripheral.swift */,
+				7DBA1EF61CA8484C006A6606 /* AbstractModel.swift */,
+			);
+			path = Peripherals;
+			sourceTree = "<group>";
+		};
+		7DA535A51CA7B6E8000628F9 /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				7DA535A61CA7B6E8000628F9 /* CloudSync.swift */,
+			);
+			path = Connections;
+			sourceTree = "<group>";
+		};
+		7DA535AD1CA7BA05000628F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7DA535AE1CA7BA05000628F9 /* Settings.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7DB9C9881C8D007000D0D1B0 = {
@@ -135,6 +190,10 @@
 		7DB9C9931C8D007000D0D1B0 /* WearableHub */ = {
 			isa = PBXGroup;
 			children = (
+				7DBA1EF81CA86DFA006A6606 /* WearableOriViewController.swift */,
+				7DA535AD1CA7BA05000628F9 /* Resources */,
+				7DA535A51CA7B6E8000628F9 /* Connections */,
+				7DA535A21CA7B6C2000628F9 /* Peripherals */,
 				7D2743AB1C8D1FEC00B53C85 /* MenuController.swift */,
 				7D2743A71C8D1E8500B53C85 /* MapViewController.swift */,
 				7D2743A81C8D1E8500B53C85 /* PhotoViewController.swift */,
@@ -145,6 +204,7 @@
 				7DB9C99B1C8D007000D0D1B0 /* Assets.xcassets */,
 				7DB9C99D1C8D007000D0D1B0 /* LaunchScreen.storyboard */,
 				7DB9C9A01C8D007000D0D1B0 /* Info.plist */,
+				7D88E5EF1CA6610100BA3CD4 /* WearableHub-Bridging-Header.h */,
 			);
 			path = WearableHub;
 			sourceTree = "<group>";
@@ -187,12 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DB9C9B91C8D007000D0D1B0 /* Build configuration list for PBXNativeTarget "WearableHub" */;
 			buildPhases = (
-				133F86DFE88645269A39AD2F /* Check Pods Manifest.lock */,
+				133F86DFE88645269A39AD2F /* 📦 Check Pods Manifest.lock */,
 				7DB9C98D1C8D007000D0D1B0 /* Sources */,
 				7DB9C98E1C8D007000D0D1B0 /* Frameworks */,
 				7DB9C98F1C8D007000D0D1B0 /* Resources */,
-				696DD2CD2EB8017E93E0E4E1 /* Embed Pods Frameworks */,
-				314180EE638B328531196914 /* Copy Pods Resources */,
+				696DD2CD2EB8017E93E0E4E1 /* 📦 Embed Pods Frameworks */,
+				314180EE638B328531196914 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,12 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DB9C9BC1C8D007000D0D1B0 /* Build configuration list for PBXNativeTarget "WearableHubTests" */;
 			buildPhases = (
-				BD417F4ED66EED2696C2243A /* Check Pods Manifest.lock */,
+				BD417F4ED66EED2696C2243A /* 📦 Check Pods Manifest.lock */,
 				7DB9C9A11C8D007000D0D1B0 /* Sources */,
 				7DB9C9A21C8D007000D0D1B0 /* Frameworks */,
 				7DB9C9A31C8D007000D0D1B0 /* Resources */,
-				A80D1790C336C1DFAF48A749 /* Embed Pods Frameworks */,
-				BD9FE6B1EABA8072F05FC23F /* Copy Pods Resources */,
+				A80D1790C336C1DFAF48A749 /* 📦 Embed Pods Frameworks */,
+				BD9FE6B1EABA8072F05FC23F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,11 +288,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DB9C9BF1C8D007000D0D1B0 /* Build configuration list for PBXNativeTarget "WearableHubUITests" */;
 			buildPhases = (
-				2284A251DEBEF14B1ED25E3A /* Check Pods Manifest.lock */,
+				2284A251DEBEF14B1ED25E3A /* 📦 Check Pods Manifest.lock */,
 				7DB9C9AC1C8D007000D0D1B0 /* Sources */,
 				7DB9C9AD1C8D007000D0D1B0 /* Frameworks */,
 				7DB9C9AE1C8D007000D0D1B0 /* Resources */,
-				AF4668B21315A9A380370E47 /* Copy Pods Resources */,
+				AF4668B21315A9A380370E47 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,7 +310,7 @@
 		7DB9C9891C8D007000D0D1B0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Sumanth Chinthagunta";
 				TargetAttributes = {
@@ -262,6 +322,9 @@
 								enabled = 1;
 							};
 							com.apple.HealthKit = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
 						};
@@ -303,6 +366,9 @@
 			files = (
 				7DB9C99F1C8D007000D0D1B0 /* LaunchScreen.storyboard in Resources */,
 				7DB9C99C1C8D007000D0D1B0 /* Assets.xcassets in Resources */,
+				7DC498C21CA7A40D00AE73DC /* Connections in Resources */,
+				7DA5359B1CA7B2CE000628F9 /* Peripherals in Resources */,
+				7DA535AF1CA7BA05000628F9 /* Settings.bundle in Resources */,
 				7DB9C99A1C8D007000D0D1B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,14 +390,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		133F86DFE88645269A39AD2F /* Check Pods Manifest.lock */ = {
+		133F86DFE88645269A39AD2F /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,14 +405,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2284A251DEBEF14B1ED25E3A /* Check Pods Manifest.lock */ = {
+		2284A251DEBEF14B1ED25E3A /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,14 +420,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		314180EE638B328531196914 /* Copy Pods Resources */ = {
+		314180EE638B328531196914 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,14 +435,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WearableHub/Pods-WearableHub-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		696DD2CD2EB8017E93E0E4E1 /* Embed Pods Frameworks */ = {
+		696DD2CD2EB8017E93E0E4E1 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,14 +450,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WearableHub/Pods-WearableHub-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A80D1790C336C1DFAF48A749 /* Embed Pods Frameworks */ = {
+		A80D1790C336C1DFAF48A749 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,14 +465,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WearableHubTests/Pods-WearableHubTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF4668B21315A9A380370E47 /* Copy Pods Resources */ = {
+		AF4668B21315A9A380370E47 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,14 +480,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WearableHubUITests/Pods-WearableHubUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BD417F4ED66EED2696C2243A /* Check Pods Manifest.lock */ = {
+		BD417F4ED66EED2696C2243A /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,14 +495,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		BD9FE6B1EABA8072F05FC23F /* Copy Pods Resources */ = {
+		BD9FE6B1EABA8072F05FC23F /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,11 +517,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DBA1EF91CA86DFA006A6606 /* WearableOriViewController.swift in Sources */,
 				7D2743AC1C8D1FEC00B53C85 /* MenuController.swift in Sources */,
-				7DB9C9971C8D007000D0D1B0 /* WearableViewController.swift in Sources */,
 				7D2743AA1C8D1E8500B53C85 /* PhotoViewController.swift in Sources */,
+				7D88E5EC1CA65A6E00BA3CD4 /* WearableViewController.swift in Sources */,
+				7DA535A41CA7B6C2000628F9 /* RxMicrosoftBand.swift in Sources */,
 				7D2743A91C8D1E8500B53C85 /* MapViewController.swift in Sources */,
 				7DB9C9951C8D007000D0D1B0 /* AppDelegate.swift in Sources */,
+				7DA535A71CA7B6E8000628F9 /* CloudSync.swift in Sources */,
+				7DBA1EF71CA8484C006A6606 /* AbstractModel.swift in Sources */,
+				7DBA1EF51CA83990006A6606 /* Peripheral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -585,7 +656,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -602,12 +673,17 @@
 				CODE_SIGN_ENTITLEMENTS = WearableHub/WearableHub.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WearableHub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.crossbusiness.WearableHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WearableHub/WearableHub-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -621,12 +697,17 @@
 				CODE_SIGN_ENTITLEMENTS = WearableHub/WearableHub.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WearableHub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.crossbusiness.WearableHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WearableHub/WearableHub-Bridging-Header.h";
 			};
 			name = Release;
 		};

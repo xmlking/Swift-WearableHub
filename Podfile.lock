@@ -1,8 +1,10 @@
 PODS:
-  - Socket.IO-Client-Swift (5.5.0)
+  - RxSwift (2.3.1)
+  - Socket.IO-Client-Swift (6.0.0)
   - SWRevealViewController (2.4.0)
 
 DEPENDENCIES:
+  - RxSwift
   - Socket.IO-Client-Swift
   - SWRevealViewController (from `https://github.com/John-Lluch/SWRevealViewController`)
 
@@ -16,9 +18,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/John-Lluch/SWRevealViewController
 
 SPEC CHECKSUMS:
-  Socket.IO-Client-Swift: f39dbd4e9b295907bb7fd4b9588b89c00426783d
+  RxSwift: 829b2843e9eddc77a02cb3f5117f0d55f8f646f1
+  Socket.IO-Client-Swift: 014fe27dbb8d9d359d09b482309421fb4eccc16c
   SWRevealViewController: b653f339865208c97be99a24876545f5be0cc4bb
 
-PODFILE CHECKSUM: 694b4159658dcd70189bb06994b13278c6a30c18
+PODFILE CHECKSUM: 97be62b458b76d84ec3e424964d6e35ca9e91860
 
-COCOAPODS: 1.0.0.beta.4
+COCOAPODS: 1.0.0.beta.6
