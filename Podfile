@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'WearableHub' do
   pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'Socket.IO-Client-Swift'
   pod 'SWRevealViewController', git: 'https://github.com/John-Lluch/SWRevealViewController'
 end
