@@ -3,8 +3,9 @@ import RxSwift
 import SWRevealViewController
 import SocketIOClientSwift
 
-class WearableViewController: UIViewController,  ConnectionStatusDelegate {
+class WearableViewController: UIViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    @IBOutlet weak var connectSpinner: UIActivityIndicatorView!
     
     var socket = SocketIOClient(socketURL: NSURL(string: "http://apsrt1453:3010")!, options: [.Nsp("/iot")]);
     
@@ -42,10 +43,24 @@ class WearableViewController: UIViewController,  ConnectionStatusDelegate {
         
         
         // Do any additional setup after loading the view, typically from a nib.
-        
         microsoftBand = RxMicrosoftBand()
-        microsoftBand?.connectionStatusDelegate = self
-        microsoftBand?.connect(self)
+        connectSpinner.startAnimating()
+        microsoftBand?.connect()
+            .subscribe(
+                onNext: { status in
+                    self.onConnectionStatusChanged(self.microsoftBand!, status: status)
+                },
+                onError: { error in
+                    print(error)
+                },
+                onCompleted: {
+                    self.showMobileEdgeDialog("\(self.microsoftBand!.name) Connection Completed")
+                },
+                onDisposed: {
+                    self.showMobileEdgeDialog("\(self.microsoftBand!.name) Connection Disposed")
+                }
+            ).addDisposableTo(disposeBag)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,41 +70,54 @@ class WearableViewController: UIViewController,  ConnectionStatusDelegate {
 
     
     //notification about connection status change
-    func connectionStatusChanged(deviceName: String, withStatus status: ConnectionStatus) {
-        
-//        spinner.stopAnimating()
-        switch status{
+    func onConnectionStatusChanged(device: Peripheral,  status: ConnectionStatus) {
+        connectSpinner.stopAnimating()
+        switch status {
         case .Connected:
-            print("Connected to \(deviceName)")
-//            connectButton.hidden = true
-//            diconnectButton.hidden = false
-            microsoftBand?.accelerometer
+            print("Connected to \(device.name)")
+            //connectButton.hidden = true
+            //iconnectButton.hidden = false
+            onConnected(device)
+            //self.cloudSync.startSync(device)
+            
+        case .Disconnected:
+            showMobileEdgeDialog("\(device.name) Dissconected")
+            //connectButton.hidden = false
+            //diconnectButton.hidden = true
+            
+        case .BluetoothUnavailable:
+            showMobileEdgeDialog("\(device.name) Bluetooth Unavailable")
+            
+            
+        case .DeviceUnavailable:
+            showMobileEdgeDialog("\(device.name) Unavailable")
+        }
+    }
+    
+    func onConnected(device: Peripheral) {
+        for sensor in device.sensors {
+            sensor
+                .take(6)
                 .subscribe(
                     onNext: { data in
-                        print("accelerometer - x:\(data.x),y:\(data.y),z:\(data.z)")
+                        switch data.type {
+                        case .Accelerometer:
+                            print(data.asJSON())
+                        default:
+                            print(data.asJSON())
+                        }
                     },
                     onError: { error in
-                        print(error)
+                        print("error: \(error)")
                     },
                     onCompleted: {
+                        
                         print("Completed")
                     },
                     onDisposed: {
                         print("Disposed")
                     }
-            ).addDisposableTo(disposeBag)
-            
-        case .Disconnected:
-            showMobileEdgeDialog("Device Dissconected")
-//            connectButton.hidden = false
-//            diconnectButton.hidden = true
-            
-        case .BluetoothUnavailable:
-            showMobileEdgeDialog("Bluetooth Unavailable")
-            
-            
-        case .DeviceUnavailable:
-            showMobileEdgeDialog("Device Unavailable")
+                ).addDisposableTo(disposeBag)
         }
     }
     

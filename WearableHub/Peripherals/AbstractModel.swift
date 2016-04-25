@@ -1,229 +1,243 @@
 import Foundation
 
+public typealias JSONDictionary = [String: AnyObject]
+
 public enum SensorType {
     case Accelerometer, Temperature, Humidity, Magnetometer, Gyroscope, Barometer, Optical, AmbientLight, Calories, Gsr, Pedometer, HeartRate, SkinTemperature, UV
 }
 
-public class BaseSensorData {
-    public var timeStamp:NSDate
-    public var tag:String!
-    
-    public init(){
-        timeStamp = NSDate()
-    }
-    
-    public func asJSON() -> Dictionary<String,AnyObject>{
-        var data = Dictionary<String,AnyObject>()
-        data["timeStamp"] = timeStamp
-        if let tag = tag{
-            data["tag"] = tag
-        }
-        return data
-    }
+func getCurrentMillis()->NSInteger{
+    return  NSInteger(NSDate().timeIntervalSince1970 * 1000)
 }
 
-public class AccelerometerData : BaseSensorData{
-    public var x:Double = 0.0
-    public var y:Double = 0.0
-    public var z:Double = 0.0
+public protocol SensorData {
+    var timestamp:NSInteger { get }
+    var type:SensorType { get }
     
-    override public init() {
-        super.init()
+    func asJSON() -> JSONDictionary
+}
+
+extension SensorData {
+    public var timestamp: NSInteger {
+        return getCurrentMillis()
     }
     
-    override public func asJSON() -> Dictionary<String,AnyObject> {
-        var data = super.asJSON()
+    public func _asJSON() -> JSONDictionary {
+        var data = JSONDictionary()
+        data["timestamp"] = timestamp
+        return data
+    }
+    
+}
+
+struct AccelerometerData: SensorData {
+    let x:Double
+    let y:Double
+    let z:Double
+    let type = SensorType.Accelerometer
+    
+    init(x:Double, y:Double, z:Double) {
+        self.x = x
+        self.y = y
+        self.z = z
+    }
+    
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["accelerometer"] = ["x":x,"y":y,"z":z]
         return data
     }
 }
 
-
-public class TemperatureData : BaseSensorData{
-    public var temperature:Double = 0.0
+struct GyroscopeData : SensorData{
+    let x:Double
+    let y:Double
+    let z:Double
+    let type = SensorType.Gyroscope
     
-    override public init() {
-        super.init()
+    init(x:Double, y:Double, z:Double) {
+        self.x = x
+        self.y = y
+        self.z = z
     }
     
-    override public func asJSON() -> Dictionary<String,AnyObject> {
-        var data = super.asJSON()
-        data["temperature"] = temperature
-        return data
-    }
-}
-
-public class HumidityData : BaseSensorData{
-    public var humidity:Double = 0.0
-    
-    override public init() {
-        super.init()
-    }
-    
-    override public func asJSON() -> Dictionary<String,AnyObject> {
-        var data = super.asJSON()
-        data["humidity"] = humidity
-        return data
-    }
-}
-
-public class GyroscopeData : BaseSensorData{
-    public var x:Double = 0.0
-    public var y:Double = 0.0
-    public var z:Double = 0.0
-    
-    override public init() {
-        super.init()
-    }
-    
-    override public func asJSON() -> Dictionary<String,AnyObject> {
-        var data = super.asJSON()
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["gyroscope"] = ["x":x,"y":y,"z":z]
         return data
     }
 }
 
-public class MagnetometerData : BaseSensorData{
-    public var x:Double = 0.0
-    public var y:Double = 0.0
-    public var z:Double = 0.0
+struct MagnetometerData : SensorData{
+    let x:Double
+    let y:Double
+    let z:Double
+    let type = SensorType.Magnetometer
     
-    override public init() {
-        super.init()
+    init(x:Double, y:Double, z:Double) {
+        self.x = x
+        self.y = y
+        self.z = z
     }
     
-    override public func asJSON() -> Dictionary<String, AnyObject> {
-        var data = super.asJSON()
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["magnetometer"] = ["x":x,"y":y,"z":z]
         return data
     }
 }
 
-public class BarometerData : BaseSensorData{
+struct TemperatureData : SensorData {
+    let temperature:Double
+    let type = SensorType.Temperature
     
-    public var temperature:Double = 0.0
-    public var airPressure:Double = 0.0
-    
-    override public init() {
-        super.init()
+    init(temperature:Double) {
+        self.temperature = temperature
     }
     
-    override public func asJSON() -> Dictionary<String, AnyObject> {
-        var data = super.asJSON()
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
+        data["temperature"] = temperature
+        return data
+    }
+}
+
+struct HumidityData : SensorData {
+    let humidity:Double
+    let type = SensorType.Humidity
+    
+    init(humidity:Double) {
+        self.humidity = humidity
+    }
+    
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
+        data["humidity"] = humidity
+        return data
+    }
+}
+
+struct BarometerData : SensorData {
+    let temperature:Double
+    let airPressure:Double
+    let type = SensorType.Barometer
+    
+    init(temperature:Double, airPressure:Double) {
+        self.temperature = temperature
+        self.airPressure = airPressure
+    }
+    
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["barometer"] = ["temperature":temperature,"airPressure":airPressure]
         return data
     }
 }
 
-public class OpticalData : BaseSensorData{
-    
-}
 
-
-public class AmbientLightData : BaseSensorData{
+struct AmbientLightData : SensorData {
+    let brightness:Int
+    let type = SensorType.AmbientLight
     
-    public var brightness:Int = 0
-    
-    override public init() {
-        super.init()
+    init(brightness:Int) {
+        self.brightness = brightness
     }
     
-    override public func asJSON() -> Dictionary<String, AnyObject> {
-        var data = super.asJSON()
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["brightness"] = [brightness]
         return data
     }
 }
 
 
-public class CaloriesData : BaseSensorData{
-    
-    //data here
-    public var calories:UInt = 0
-    
-    override public init() {
-        super.init()
+struct CaloriesData : SensorData {
+    let calories:UInt
+    let type = SensorType.Calories
+
+    init(calories:UInt) {
+        self.calories = calories
     }
     
-    override public func asJSON() -> Dictionary<String, AnyObject> {
-        var data = super.asJSON()
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["calories"] = [calories]
         return data
     }
 }
 
-public class GsrData : BaseSensorData{
+struct GsrData : SensorData{
+    let resistance:UInt
+    let type = SensorType.Gsr
     
-    public var resistance:UInt = 0
-    
-    override public init() {
-        super.init()
+    init(resistance:UInt) {
+        self.resistance = resistance
     }
     
-    override public func asJSON() -> Dictionary<String, AnyObject> {
-        var data = super.asJSON()
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["resistance"] = [resistance]
         return data
     }
 }
 
 
-public class PedometerData : BaseSensorData{
+struct PedometerData : SensorData{
+    let steps:UInt
+    let type = SensorType.Pedometer
     
-    public var steps:UInt = 0
-    
-    override public init() {
-        super.init()
+    init(steps:UInt) {
+        self.steps = steps
     }
     
-    override public func asJSON() -> Dictionary<String, AnyObject> {
-        var data = super.asJSON()
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["steps"] = [steps]
         return data
     }
 }
 
 
-public class HeartRateData : BaseSensorData{
+struct HeartRateData : SensorData {
+    let heartRate:UInt
+    let type = SensorType.HeartRate
     
-    public var heartRate:UInt = 0
-    
-    override public init() {
-        super.init()
+    init(heartRate:UInt) {
+        self.heartRate = heartRate
     }
-    
-    override public func asJSON() -> Dictionary<String, AnyObject> {
-        var data = super.asJSON()
+
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["heartRate"] = [heartRate]
         return data
     }
 }
 
-public class SkinTemperatureData : BaseSensorData{
+struct SkinTemperatureData : SensorData{
+    let temperature:Double
+    let type = SensorType.SkinTemperature
     
-    public var temperature:Double = 0
-    
-    override public init() {
-        super.init()
+    init(temperature:Double) {
+        self.temperature = temperature
     }
     
-    override public func asJSON() -> Dictionary<String, AnyObject> {
-        var data = super.asJSON()
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["temperature"] = [temperature]
         return data
     }
 }
 
-public class UVData : BaseSensorData{
+struct UVData : SensorData{
+    let indexLevel:UInt
+    let type = SensorType.UV
     
-    public var indexLevel:UInt = 0
-    
-    override public init() {
-        super.init()
+    init(indexLevel:UInt) {
+        self.indexLevel = indexLevel
     }
     
-    override public func asJSON() -> Dictionary<String, AnyObject> {
-        var data = super.asJSON()
+    func asJSON() -> JSONDictionary {
+        var data = (self as SensorData)._asJSON()
         data["indexLevel"] = [indexLevel]
         return data
     }

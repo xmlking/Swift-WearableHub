@@ -1,4 +1,5 @@
 import Foundation
+import RxSwift
 
 public enum ConnectionStatus {
     case Connected
@@ -7,32 +8,13 @@ public enum ConnectionStatus {
     case DeviceUnavailable
 }
 
-public protocol ConnectionStatusDelegate {
-    func connectionStatusChanged(deviceName:String, withStatus status:ConnectionStatus)
-}
-
 public protocol Peripheral {
     
-    var deviceName: String { get }
-    var connectionStatusDelegate:ConnectionStatusDelegate! { set get }
+    var name: String { get }
+    var sensors: [Observable<SensorData>] { get }
     
     func getSupportedSensors() -> [SensorType]
-    
-    func connect(connectionStatusDelegate:ConnectionStatusDelegate!)
-    
-    func disconnect()
- 
+    func connect() -> Observable<ConnectionStatus>
 }
 
-
-public extension Peripheral  {
-    func updateConnectionStatus(status:ConnectionStatus){
-        if let delegate = connectionStatusDelegate {
-            delegate.connectionStatusChanged(deviceName , withStatus: status)
-        }
-    }
-    mutating func connect(connectionStatusDelegate:ConnectionStatusDelegate!){
-        self.connectionStatusDelegate = connectionStatusDelegate
-    }
-}
 
