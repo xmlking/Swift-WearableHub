@@ -17,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9K-yQ-rYh">
-                                <rect key="frame" x="260" y="285" width="80" height="30"/>
-                                <state key="normal" title="Hello World"/>
-                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KEE-u7-WaR">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="I9K-yQ-rYh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Pg-3a-Lux"/>
-                            <constraint firstItem="I9K-yQ-rYh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KeG-BP-iOm"/>
+                            <constraint firstItem="KEE-u7-WaR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ian-gn-I6Z"/>
+                            <constraint firstItem="KEE-u7-WaR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tu5-g7-qhc"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -34,6 +34,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="connectSpinner" destination="KEE-u7-WaR" id="wUv-sT-DwL"/>
                         <outlet property="menuButton" destination="vtr-uW-Tru" id="Xn3-xQ-l3o"/>
                     </connections>
                 </viewController>

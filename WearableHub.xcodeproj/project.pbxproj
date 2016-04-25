@@ -16,9 +16,10 @@
 		7D82BA5D1CA655E300720988 /* MicrosoftBandKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D82BA5C1CA655E300720988 /* MicrosoftBandKit_iOS.framework */; };
 		7D88E5EC1CA65A6E00BA3CD4 /* WearableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9C9961C8D007000D0D1B0 /* WearableViewController.swift */; };
 		7D88E5F31CA6630300BA3CD4 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D88E5F21CA6630300BA3CD4 /* CoreBluetooth.framework */; };
+		7D9846B11CCD6F1000B17FD7 /* SumoCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9846B01CCD6F1000B17FD7 /* SumoCloud.swift */; };
 		7DA5359B1CA7B2CE000628F9 /* Peripherals in Resources */ = {isa = PBXBuildFile; fileRef = 7DA5359A1CA7B2CE000628F9 /* Peripherals */; };
 		7DA535A41CA7B6C2000628F9 /* RxMicrosoftBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA535A31CA7B6C2000628F9 /* RxMicrosoftBand.swift */; };
-		7DA535A71CA7B6E8000628F9 /* CloudSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA535A61CA7B6E8000628F9 /* CloudSync.swift */; };
+		7DA535A71CA7B6E8000628F9 /* CloudConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA535A61CA7B6E8000628F9 /* CloudConnection.swift */; };
 		7DA535AF1CA7BA05000628F9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7DA535AE1CA7BA05000628F9 /* Settings.bundle */; };
 		7DB9C9951C8D007000D0D1B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB9C9941C8D007000D0D1B0 /* AppDelegate.swift */; };
 		7DB9C99A1C8D007000D0D1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB9C9981C8D007000D0D1B0 /* Main.storyboard */; };
@@ -63,9 +64,10 @@
 		7D82BA5C1CA655E300720988 /* MicrosoftBandKit_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftBandKit_iOS.framework; sourceTree = "<group>"; };
 		7D88E5EF1CA6610100BA3CD4 /* WearableHub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WearableHub-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D88E5F21CA6630300BA3CD4 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		7D9846B01CCD6F1000B17FD7 /* SumoCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SumoCloud.swift; sourceTree = "<group>"; };
 		7DA5359A1CA7B2CE000628F9 /* Peripherals */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Peripherals; path = /Developer/Work/apple/WearableHub/WearableHub/Peripherals; sourceTree = "<absolute>"; };
 		7DA535A31CA7B6C2000628F9 /* RxMicrosoftBand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxMicrosoftBand.swift; sourceTree = "<group>"; };
-		7DA535A61CA7B6E8000628F9 /* CloudSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudSync.swift; sourceTree = "<group>"; };
+		7DA535A61CA7B6E8000628F9 /* CloudConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudConnection.swift; sourceTree = "<group>"; };
 		7DA535AE1CA7BA05000628F9 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		7DB9C9911C8D007000D0D1B0 /* WearableHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WearableHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB9C9941C8D007000D0D1B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,7 +154,8 @@
 		7DA535A51CA7B6E8000628F9 /* Connections */ = {
 			isa = PBXGroup;
 			children = (
-				7DA535A61CA7B6E8000628F9 /* CloudSync.swift */,
+				7DA535A61CA7B6E8000628F9 /* CloudConnection.swift */,
+				7D9846B01CCD6F1000B17FD7 /* SumoCloud.swift */,
 			);
 			path = Connections;
 			sourceTree = "<group>";
@@ -518,13 +521,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DBA1EF91CA86DFA006A6606 /* WearableOriViewController.swift in Sources */,
+				7D9846B11CCD6F1000B17FD7 /* SumoCloud.swift in Sources */,
 				7D2743AC1C8D1FEC00B53C85 /* MenuController.swift in Sources */,
 				7D2743AA1C8D1E8500B53C85 /* PhotoViewController.swift in Sources */,
 				7D88E5EC1CA65A6E00BA3CD4 /* WearableViewController.swift in Sources */,
 				7DA535A41CA7B6C2000628F9 /* RxMicrosoftBand.swift in Sources */,
 				7D2743A91C8D1E8500B53C85 /* MapViewController.swift in Sources */,
 				7DB9C9951C8D007000D0D1B0 /* AppDelegate.swift in Sources */,
-				7DA535A71CA7B6E8000628F9 /* CloudSync.swift in Sources */,
+				7DA535A71CA7B6E8000628F9 /* CloudConnection.swift in Sources */,
 				7DBA1EF71CA8484C006A6606 /* AbstractModel.swift in Sources */,
 				7DBA1EF51CA83990006A6606 /* Peripheral.swift in Sources */,
 			);
